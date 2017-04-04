@@ -1,26 +1,25 @@
+from otree.api import Currency as c, currency_range
 from . import models
 from ._builtin import Page, WaitPage
-from otree.api import Currency as c, currency_range
 from .models import Constants
 
 
-class Demographics(Page):
-    form_model = models.Player
-    form_fields = ['age',
-                   'gender']
+class MyPage(Page):
+    pass
 
 
-class CognitiveReflectionTest(Page):
-    form_model = models.Player
-    form_fields = ['crt_bat',
-                   'crt_widget',
-                   'crt_lake']
+class ResultsWaitPage(WaitPage):
 
-    def before_next_page(self):
-        self.player.set_payoff()
+    def after_all_players_arrive(self):
+        pass
+
+
+class Results(Page):
+    pass
 
 
 page_sequence = [
-    Demographics,
-    CognitiveReflectionTest
+    MyPage,
+    ResultsWaitPage,
+    Results
 ]

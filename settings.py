@@ -147,7 +147,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 3,
         'app_sequence': ['wardecker_test', 'payment_info'],
     },
-    {
+   {
         'name': 'public_goods',
         'display_name': "Public Goods",
         'num_demo_participants': 3,
